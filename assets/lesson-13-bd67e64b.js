@@ -1,0 +1,2 @@
+import"./modulepreload-polyfill-3cfb730f.js";//! Код виконаного завдання
+function c(e){e.reduce((n,o,l)=>{console.log(` acc: ${n} index: ${l} element: ${o}`)},0)}c(["Робітник1","Робітник2","Робітник3"]);function m(e){e.map((n,o)=>{console.log(`index: ${o} element: ${n}`)},0)}m(["Робітник1","Робітник2","Робітник3"]);function i(e){e.reduce((n,o)=>{console.log(`index: ${o} element: ${n}`)},0)}i(["Робітник1","Робітник2","Робітник3"]);

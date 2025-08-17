@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-3cfb730f.js";console.log("Lesson-3 JS");let e="Anthony Hopkins",o="my favorite actor's name",t=e[e.length-1];t=t.toUpperCase();console.log(`The last letter in ${o} ${e} is '${t}'!`);
