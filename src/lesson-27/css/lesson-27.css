@@ -1,0 +1,21 @@
+        img {
+            height: 200px;
+            width: auto;
+            display: block;
+            background-color: #f0f0f0; /* фон для видимих, але ще не завантажених зображень */
+            transition: opacity 0.5s ease-in;
+            opacity: 0;
+        }
+        img.loaded {
+            opacity: 1; /* плавна поява після завантаження */
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
