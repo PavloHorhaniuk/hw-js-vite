@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Завдання 1 — Таймер інтервалу</title>
+    <link rel="stylesheet" href="./common.css" />
+</head>
+
+<body>
+    <div class="page">
+        <div class="breadcrumbs"><a class="back" href="./index.html">← Назад</a></div>
+        <section class="card" id="task1">
+            <header>
+                <h2>Завдання 1 — Таймер інтервалу</h2>
+            </header>
+            <div class="content">
+                <p class="hint">Щосекунди виводимо повідомлення. Після 5 — <code class="inline">clearInterval</code>
+                    зупиняє інтервал.</p>
+                <div class="row">
+                    <button class="btn ok" id="t1-start">Запустити</button>
+                    <button class="btn warn" id="t1-stop" disabled>Зупинити</button>
+                    <button class="btn" id="t1-reset">Скинути</button>
+                </div>
+                <div class="log" id="t1-log" aria-live="polite"></div>
+            </div>
+        </section>
+    </div>
+    <script src="./task1.js" type="module" defer></script>
+</body>
+
+</html>

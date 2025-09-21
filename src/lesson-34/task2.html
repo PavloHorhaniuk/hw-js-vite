@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Завдання 2 — Анімація елементів</title>
+    <link rel="stylesheet" href="./common.css" />
+</head>
+
+<body>
+    <div class="page">
+        <div class="breadcrumbs"><a class="back" href="./index.html">← Назад</a></div>
+        <section class="card" id="task2">
+            <header>
+                <h2>Завдання 2 — Анімація елементів</h2>
+            </header>
+            <div class="content">
+                <p class="hint">Кілька блоків рухаються та змінюють розмір через <code
+                        class="inline">setInterval</code>.</p>
+                <div class="row">
+                    <button class="btn ok" id="t2-start">Старт анімації</button>
+                    <button class="btn warn" id="t2-pause" disabled>Пауза</button>
+                    <button class="btn" id="t2-reset">Скинути</button>
+                </div>
+                <div class="arena" id="t2-arena" aria-label="Площа анімації"></div>
+            </div>
+        </section>
+    </div>
+    <script src="./task2.js" type="module" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Завдання 3 — Інтерактивна гра</title>
+    <link rel="stylesheet" href="./common.css" />
+</head>
+
+<body>
+    <div class="page">
+        <div class="breadcrumbs"><a class="back" href="./index.html">← Назад</a></div>
+        <section class="card" id="task3">
+            <header>
+                <h2>Завдання 3 — Інтерактивна гра</h2>
+            </header>
+            <div class="content game-wrap">
+                <p class="hint">Клікай по цілі протягом заданого інтервалу часу. Підрахунок очок і натисків.</p>
+                <div class="hud" role="status" aria-live="polite">
+                    <span class="badge">Час: <span id="t3-time">—</span>s</span>
+                    <span class="badge">Очки: <span id="t3-score">0</span></span>
+                    <span class="badge">Натисків: <span id="t3-clicks">0</span></span>
+                </div>
+                <div class="row">
+                    <label for="t3-duration" class="visually-hidden">Тривалість</label>
+                    <input id="t3-duration" class="input" type="number" min="5" max="120" step="1" value="20" />
+                    <button class="btn ok" id="t3-start">Старт гри</button>
+                    <button class="btn warn" id="t3-stop" disabled>Стоп</button>
+                    <button class="btn" id="t3-reset">Скинути</button>
+                </div>
+                <div class="game-arena" id="t3-arena" aria-label="Ігрове поле"></div>
+            </div>
+        </section>
+    </div>
+    <script src="./task3.js" type="module" defer></script>
+</body>
+
+</html>

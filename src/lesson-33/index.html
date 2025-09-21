@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Веб-сховище — Студенти (localStorage + Handlebars)</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Handlebars з CDN (глобальний Handlebars) -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+</head>
+
+<body>
+    <main class="page">
+        <header class="header">
+            <h1>Список студентів (localStorage)</h1>
+            <p class="muted">При першому запуску дані беруться з <code>students.json</code>, далі — тільки з
+                <code>localStorage["students"]</code>.
+            </p>
+        </header>
+
+        <!-- Панель керування -->
+        <section class="card">
+            <div class="row">
+                <button id="add-btn" class="btn ok">Додати студента</button>
+                <button id="clear-all" class="btn danger">Очистити localStorage</button>
+                <span id="status" class="status"></span>
+            </div>
+
+            <!-- Форма додавання/редагування (показується по кліку "Додати студента" або "Edit") -->
+            <form id="student-form" class="form" hidden>
+                <h3 id="form-title">Нова картка студента</h3>
+                <div class="grid">
+                    <label>Ім'я
+                        <input id="firstName" class="input" type="text" required />
+                    </label>
+                    <label>Прізвище
+                        <input id="lastName" class="input" type="text" required />
+                    </label>
+                    <label>Вік
+                        <input id="age" class="input" type="number" min="14" max="100" required />
+                    </label>
+                    <label>Курс
+                        <input id="course" class="input" type="number" min="1" max="10" required />
+                    </label>
+                    <label>Факультет
+                        <input id="faculty" class="input" type="text" required />
+                    </label>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn ok" id="save-btn">Зберегти</button>
+                    <button type="button" class="btn" id="cancel-btn">Скасувати</button>
+                </div>
+                <!-- внутрішній стан: якщо є індекс — редагуємо, інакше додаємо -->
+                <input type="hidden" id="edit-index" value="" />
+            </form>
+        </section>
+
+        <!-- Інформативний рядок -->
+        <p class="muted">Нижче список рендериться ТІЛЬКИ з <code>localStorage["students"]</code>.</p>
+
+        <!-- Список студентів -->
+        <ul id="students-list" class="list"></ul>
+    </main>
+    <footer>
+        <p>const info: CourseInfo = <br>{
+            розробник: "Павло Горганюк",<br>
+            курс: "Front-End 4"
+            };</p>
+    </footer>
+
+    <script src="./app.js" type="module" defer></script>
+</body>
+
+</html>

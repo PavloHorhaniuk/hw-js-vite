@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Завдання 4 — Контроль часу</title>
+    <link rel="stylesheet" href="./common.css" />
+</head>
+
+<body>
+    <div class="page">
+        <div class="breadcrumbs"><a class="back" href="./index.html">← Назад</a></div>
+        <section class="card" id="task4">
+            <header>
+                <h2>Завдання 4 — Контроль часу</h2>
+            </header>
+            <div class="content">
+                <p class="hint">Введи час у секундах. Після спливу таймера отримаєш повідомлення. Обери <code
+                        class="inline">setTimeout</code> або <code class="inline">setInterval</code> (з відліком).</p>
+                <div class="row">
+                    <label for="t4-seconds" class="visually-hidden">Секунди</label>
+                    <input id="t4-seconds" class="input" type="number" min="1" max="3600" step="1" value="5" />
+                    <button class="btn ok" id="t4-start-to">Старт (setTimeout)</button>
+                    <button class="btn alt" id="t4-start-iv">Старт з відліком (setInterval)</button>
+                    <button class="btn warn" id="t4-cancel" disabled>Скасувати</button>
+                </div>
+                <div id="t4-status" class="hint">Статус: очікування…</div>
+            </div>
+        </section>
+    </div>
+    <script src="./task4.js" type="module" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+[
+    {
+        "firstName": "Іван",
+        "lastName": "Шевченко",
+        "age": 19,
+        "course": 2,
+        "faculty": "Інформатика"
+    },
+    {
+        "firstName": "Олена",
+        "lastName": "Мельник",
+        "age": 21,
+        "course": 3,
+        "faculty": "Економіка"
+    },
+    {
+        "firstName": "Павло",
+        "lastName": "Гордієнко",
+        "age": 20,
+        "course": 2,
+        "faculty": "Право"
+    },
+    {
+        "firstName": "Оксана",
+        "lastName": "Романюк",
+        "age": 22,
+        "course": 4,
+        "faculty": "Філологія"
+    },
+    {
+        "firstName": "Юрій",
+        "lastName": "Кравчук",
+        "age": 18,
+        "course": 1,
+        "faculty": "Кібербезпека"
+    }
+]

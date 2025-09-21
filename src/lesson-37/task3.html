@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Завдання 3 — makeTransaction</title>
+    <link rel="stylesheet" href="./common.css" />
+</head>
+
+<body>
+    <div class="page">
+        <div class="breadcrumbs"><a class="back" href="./index.html">← Назад</a></div>
+
+        <section class="card">
+            <header>
+                <h2>Завдання 3 — makeTransaction(transaction)</h2>
+            </header>
+            <div class="content">
+                <p class="hint">
+                    Перепиши функцію без onSuccess/onError — повертаємо проміс.
+                    Успіх: <code class="inline">{ id, time }</code>. Помилка: <code class="inline">id</code>.
+                </p>
+
+                <div class="row">
+                    <input id="t3-id" class="input" type="number" placeholder="id" value="101" />
+                    <input id="t3-amount" class="input" type="number" placeholder="amount" value="250" />
+                    <button class="btn ok" id="t3-send">Відправити транзакцію</button>
+                    <button class="btn alt" id="t3-run-sample">Запустити приклади з умови</button>
+                </div>
+
+                <div class="log" id="t3-log" aria-live="polite"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="./task3.js" type="module" defer></script>
+</body>
+
+</html>

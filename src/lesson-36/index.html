@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>“Проміси”</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<header class="site-header">
+    <h1>Таймер зворотного відліку від майбутньої дати</h1>
+    <p class="subtitle">Введіть дату принаймні на 1 день у майбутнє — плагін запустить відлік.</p>
+</header>
+
+<main class="page">
+    <!-- Інпут згідно умови -->
+    <label class="input-label" for="target-date">
+        Введіть майбутню дату <i>(більше від сьогоднішньої дати на 1 день)</i> :
+        <input id="target-date" type="datetime-local" />
+    </label>
+    <div id="msg" class="msg" aria-live="polite"></div>
+
+    <!-- Розмітка таймера згідно умови -->
+    <div class="timer" id="timer-1">
+        <div class="field">
+            <span class="label">Days</span>
+            <span class="value" data-value="days">--</span>
+        </div>
+        <div class="field">
+            <span class="label">Hours</span>
+            <span class="value" data-value="hours">--</span>
+        </div>
+        <div class="field">
+            <span class="label">Minutes</span>
+            <span class="value" data-value="mins">--</span>
+        </div>
+        <div class="field">
+            <span class="label">Seconds</span>
+            <span class="value" data-value="secs">--</span>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <p>const info: CourseInfo = <br>{
+        розробник: "Павло Горганюк",<br>
+        курс: "Front-End 4"
+        };</p>
+</footer>
+
+<script src="./countdown-timer.js" type="module" defer></script>
+<script src="./app.js" type="module" defer></script>
+</body>
+</html>

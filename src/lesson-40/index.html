@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HTTP запити 2 — AJAX (OMDb)</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <main class="page">
+        <h1>HTTP запити 2. AJAX — OMDb</h1>
+        <p class="muted">
+            Сьогодні вчимось отримувати дані з публічного REST API за допомогою <code>fetch()</code> та рендерити їх на
+            сторінці.
+        </p>
+
+        <section class="card">
+            <!-- 1) Ввід і кнопка -->
+            <div class="row">
+                <label class="label" for="api-key">OMDb API key:</label>
+                <input id="api-key" class="input" type="text" placeholder="Встав свій ключ…" />
+                <button id="save-key" class="btn">Зберегти ключ</button>
+                <span id="key-status" class="status"></span>
+            </div>
+
+            <div class="row">
+                <label class="label" for="term">Пошук (s):</label>
+                <input id="term" class="input" type="text" value="Batman" />
+                <label class="label" for="type">Тип:</label>
+                <select id="type" class="input">
+                    <option value="">any</option>
+                    <option value="movie">movie</option>
+                    <option value="series">series</option>
+                    <option value="episode">episode</option>
+                </select>
+                <label class="label" for="count">Скільки показати (1–10):</label>
+                <input id="count" class="input" type="number" min="1" max="10" step="1" value="5" />
+                <button id="fetch-btn" class="btn ok">Отримати N результатів</button>
+            </div>
+
+            <!-- 2) Статус і підгляд зібраного URL із BaseURL + URLSearchParams -->
+            <p id="status" class="status" aria-live="polite"></p>
+            <p class="muted">URL запиту: <code id="request-url">—</code></p>
+
+            <!-- 4) Список для рендеру відповіді -->
+            <ul id="data-list" class="list"></ul>
+
+            <details class="hint">
+                <summary>Нагадування (з ДЗ-15): 3+ приклади для Postman</summary>
+                <ol>
+                    <li><code>GET https://www.omdbapi.com/?t=Inception&y=2010&plot=full&apikey=ea8dc813</code></li>
+                    <li><code>GET https://www.omdbapi.com/?i=tt4154796&plot=short&apikey=ea8dc813</code></li>
+                    <li><code>GET https://www.omdbapi.com/?s=Batman&type=movie&page=1&apikey=ea8dc813</code></li>
+                </ol>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <p>const info: CourseInfo = <br>{
+            розробник: "Павло Горганюк",<br>
+            курс: "Front-End 4"
+            };</p>
+    </footer>
+
+    <script src="./app.js" type="module" defer></script>
+</body>
+
+</html>

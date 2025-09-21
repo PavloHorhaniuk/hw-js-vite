@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Завдання 2 — Promise.race</title>
+    <link rel="stylesheet" href="./common.css" />
+</head>
+
+<body>
+    <div class="page">
+        <div class="breadcrumbs"><a class="back" href="./index.html">← Назад</a></div>
+
+        <section class="card">
+            <header>
+                <h2>Завдання 2 — Змагання промісів (Promise.race)</h2>
+            </header>
+            <div class="content">
+                <p class="hint">
+                    Створи <code class="inline">randomDelay(value)</code> з випадковою затримкою 1000–5000 мс.
+                    Збери 5 промісів, запусти <code class="inline">Promise.race</code>, виведи результат найшвидшого.
+                </p>
+
+                <table class="table" id="t2-table"></table>
+
+                <div class="row">
+                    <button class="btn ok" id="t2-run">Запустити Promise.race</button>
+                    <button class="btn alt" id="t2-again">Нові випадкові затримки</button>
+                    <button class="btn" id="t2-reset">Скинути</button>
+                </div>
+
+                <div class="log" id="t2-log" aria-live="polite"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="./task2.js" type="module" defer></script>
+</body>
+
+</html>
