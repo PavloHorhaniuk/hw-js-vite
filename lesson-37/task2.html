@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Завдання 2 — toggleUserState</title>
+    
+  <script type="module" crossorigin src="/hw-js-vite/assets/task2-d5e68338.js"></script>
+  <link rel="modulepreload" crossorigin href="/hw-js-vite/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="stylesheet" href="/hw-js-vite/assets/common-b6b718db.css">
+</head>
+
+<body>
+    <div class="page">
+        <div class="breadcrumbs"><a class="back" href="./index.html">← Назад</a></div>
+
+        <section class="card">
+            <header>
+                <h2>Завдання 2 — toggleUserState(allUsers, userName)</h2>
+            </header>
+            <div class="content">
+                <p class="hint">Перепиши функцію без callback: повертаємо <code
+                        class="inline">Promise&lt;updatedUsers&gt;</code>.</p>
+
+                <div class="row">
+                    <label for="t2-select" class="visually-hidden">Користувач</label>
+                    <select id="t2-select" class="input"></select>
+                    <button class="btn ok" id="t2-toggle">Toggle</button>
+                    <button class="btn" id="t2-reset">Скинути</button>
+                </div>
+
+                <table class="table" id="t2-table" aria-label="Список користувачів"></table>
+
+                <div class="row">
+                    <button class="btn alt" id="t2-demo-mango">.then(logger) Mango</button>
+                    <button class="btn alt" id="t2-demo-lux">.then(logger) Lux</button>
+                </div>
+
+                <div class="log" id="t2-log" aria-live="polite"></div>
+            </div>
+        </section>
+    </div>
+
+    
+</body>
+
+</html>

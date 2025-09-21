@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Пагінація — JSONPlaceholder</title>
+    
+  <script type="module" crossorigin src="/hw-js-vite/assets/index-91485217.js"></script>
+  <link rel="modulepreload" crossorigin href="/hw-js-vite/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="stylesheet" href="/hw-js-vite/assets/index-2e53ef4f.css">
+</head>
+
+<body>
+    <main class="page">
+        <h1>Пагінація (REST API + fetch)</h1>
+        <p class="muted">
+            Отримуємо вибірку з колекції <code>/posts</code> за параметрами <code>_limit</code> і <code>_page</code>,
+            рендеримо у список і гортаємо сторінки кнопками.
+        </p>
+
+        <section class="card">
+            <!-- 1) Інпут: скільки на сторінці (N) -->
+            <div class="row">
+                <label class="label" for="per-page">Елементів на сторінці (1–10):</label>
+                <input id="per-page" class="input" type="number" min="1" max="10" step="1" value="4" />
+            </div>
+
+            <!-- 1) Інпут: номер сторінки (P) -->
+            <div class="row">
+                <label class="label" for="page">Номер сторінки (1–P):</label>
+                <input id="page" class="input" type="number" min="1" value="1" />
+                <button id="fetch-btn" class="btn ok">Отримати елементи</button>
+            </div>
+
+            <!-- 2) Підгляд сформованого URL -->
+            <p class="muted">URL: <code id="request-url">—</code></p>
+
+            <!-- Інформативний рядок -->
+            <p class="posts-info">
+                Сторінка № <span class="page">—</span> з <span class="number-of-pages">—</span>
+            </p>
+
+            <!-- Кнопки пагінації -->
+            <div class="row">
+                <button id="prev" class="btn">&laquo; Prev</button>
+                <button id="next" class="btn">Next &raquo;</button>
+                <span id="status" class="status"></span>
+            </div>
+
+            <!-- 4) Список для рендера -->
+            <ul id="data-list" class="list"></ul>
+        </section>
+
+        <details class="hint">
+            <summary>Приклад ручного запиту</summary>
+            <code>https://jsonplaceholder.typicode.com/posts?_limit=3&_page=5</code>
+        </details>
+    </main>
+
+    <footer>
+        <p>const info: CourseInfo = <br>{
+            розробник: "Павло Горганюк",<br>
+            курс: "Front-End 4"
+            };</p>
+    </footer>
+
+    
+</body>
+
+</html>

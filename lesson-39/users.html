@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GET /users — JSONPlaceholder</title>
+    
+  <script type="module" crossorigin src="/hw-js-vite/assets/users-5a21cb4b.js"></script>
+  <link rel="modulepreload" crossorigin href="/hw-js-vite/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="stylesheet" href="/hw-js-vite/assets/common-d5bd8a77.css">
+</head>
+
+<body>
+    <div class="page">
+        <div class="row"><a class="btn" href="./index.html">← Назад</a></div>
+
+        <section class="card" style="padding:16px">
+            <h2 style="margin-top:0">Користувачі (GET /users)</h2>
+            <p class="hint">Ендпоінт: <code>https://jsonplaceholder.typicode.com/users</code></p>
+
+            <div class="row">
+                <input id="search" class="input" type="search" placeholder="Пошук: ім'я, username, email…" />
+                <button id="load" class="btn">Завантажити</button>
+                <span id="status" class="msg"></span>
+            </div>
+
+            <table id="table" class="table" aria-label="Users"></table>
+
+            <p class="hint">Приклади для Postman:
+                <br>• <code>GET https://jsonplaceholder.typicode.com/users</code>
+                <br>• <code>GET https://jsonplaceholder.typicode.com/users/1</code>
+                <br>• <code>GET https://jsonplaceholder.typicode.com/users?username=Bret</code>
+            </p>
+        </section>
+    </div>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+import"./modulepreload-polyfill-3cfb730f.js";const b="https://www.omdbapi.com/";let o="";const e=t=>document.querySelector(t),v=e("#api-key"),w=e("#save-key"),n=e("#key-status"),h=e("#term"),p=e("#type"),k=e("#count"),m=e("#fetch-btn"),y=e("#status"),$=e("#request-url"),f=e("#data-list");(function(){const s=localStorage.getItem("omdb_api_key")||"";s?(o=s,v.value=s,n.textContent="ключ збережено",n.className="status ok"):(n.textContent="введи та збережи ключ",n.className="status warn")})();w.addEventListener("click",()=>{const t=v.value.trim();if(!t){n.textContent="ключ порожній 🙃",n.className="status error";return}o=t,localStorage.setItem("omdb_api_key",o),n.textContent="ключ збережено",n.className="status ok"});function r(t,s=""){y.textContent=t||"",y.className="status "+s}function S(t){$.textContent=t}function l(t){return String(t).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#39;")}function g(t){return!t||t==="N/A"?"":`<img class="poster" alt="poster" src="${l(t)}">`}function A(){const t=new URLSearchParams;return t.set("apikey",o),t.set("s",h.value.trim()||"Batman"),p.value&&t.set("type",p.value),t.set("page","1"),`${b}?${t.toString()}`}async function d(){const t=Math.max(1,Math.min(10,Number(k.value)||1));if(!o){r("Введи OMDb API key і натисни «Зберегти ключ».","error");return}const s=A();S(s),r("Завантаження…"),m.disabled=!0,f.innerHTML="";try{const c=await fetch(s,{method:"GET"});if(!c.ok)throw new Error(`HTTP ${c.status}`);const i=await c.json();if(i.Response==="False"){r(`Помилка OMDb: ${i.Error||"невідомо"}`,"error");return}const u=Array.isArray(i.Search)?i.Search.slice(0,t):[];if(!u.length){r("Порожньо. Спробуй інший пошуковий запит.","warn");return}const E=u.map(a=>`
+      <li class="item">
+        ${g(a.Poster)}
+        <div>
+          <div class="item-title">${l(a.Title)}</div>
+          <div class="item-sub">
+            ${l(a.Type)} · ${l(a.Year)} ·
+            imdbID: <a href="https://www.imdb.com/title/${l(a.imdbID)}/" target="_blank" rel="noreferrer">${l(a.imdbID)}</a>
+          </div>
+        </div>
+      </li>
+    `).join("");f.innerHTML=E,r(`Готово: показано ${u.length} з ${i.totalResults||u.length}.`,"ok")}catch(c){console.error(c),r("Помилка мережі або CORS. Перевір ключ і підключення.","error")}finally{m.disabled=!1}}m.addEventListener("click",d);k.addEventListener("keydown",t=>{t.key==="Enter"&&d()});h.addEventListener("keydown",t=>{t.key==="Enter"&&d()});o&&d();

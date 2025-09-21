@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Завдання 2 — 30 с → мілісекунди</title>
+    
+  <script type="module" crossorigin src="/hw-js-vite/assets/task2-ef4d5620.js"></script>
+  <link rel="modulepreload" crossorigin href="/hw-js-vite/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="stylesheet" href="/hw-js-vite/assets/common-5c60dc4f.css">
+</head>
+
+<body>
+    <div class="page">
+        <div class="breadcrumbs"><a class="back" href="./index.html">← Назад</a></div>
+
+        <section class="card">
+            <header>
+                <h2>Завдання 2</h2>
+            </header>
+            <div class="content">
+                <p class="hint">
+                    Створити таймер, який починає відлік з <strong>30 секунд</strong> та <strong>зменшує час кожну
+                        мілісекунду</strong>.
+                    При <strong>10 с</strong> — відтворити анімацію. При <strong>0 с</strong> — виконати дію: зробити
+                    кнопку «Старт» знову активною.
+                </p>
+
+                <div class="big-timer" id="t2-time" aria-live="polite">00:30.000</div>
+                <div class="note" id="t2-note"></div>
+
+                <div class="row">
+                    <button class="btn ok" id="t2-start">Старт</button>
+                    <button class="btn warn" id="t2-pause" disabled>Пауза</button>
+                    <button class="btn" id="t2-reset">Скинути</button>
+                </div>
+
+                <div class="log" id="t2-log" aria-live="polite"></div>
+            </div>
+        </section>
+    </div>
+
+    
+</body>
+
+</html>

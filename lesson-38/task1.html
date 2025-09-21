@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Завдання 1 — Promise.all</title>
+    
+  <script type="module" crossorigin src="/hw-js-vite/assets/task1-b67dc3be.js"></script>
+  <link rel="modulepreload" crossorigin href="/hw-js-vite/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="stylesheet" href="/hw-js-vite/assets/common-b3f35ebc.css">
+</head>
+
+<body>
+    <div class="page">
+        <div class="breadcrumbs"><a class="back" href="./index.html">← Назад</a></div>
+
+        <section class="card">
+            <header>
+                <h2>Завдання 1 — Порівняння кількох промісів (Promise.all)</h2>
+            </header>
+            <div class="content">
+                <p class="hint">
+                    Створи <code class="inline">delayedPromise(value, delay)</code>.
+                    Побудуй масив з 5 промісів із різними значеннями та затримками.
+                    Використай <code class="inline">Promise.all</code> і виведи результати в консоль та лог.
+                </p>
+
+                <table class="table" id="t1-table"></table>
+
+                <div class="row">
+                    <button class="btn ok" id="t1-run">Запустити Promise.all</button>
+                    <button class="btn alt" id="t1-randomize">Рандомізувати дані</button>
+                    <button class="btn" id="t1-reset">Скинути</button>
+                </div>
+
+                <div class="log" id="t1-log" aria-live="polite"></div>
+            </div>
+        </section>
+    </div>
+
+    
+</body>
+
+</html>
