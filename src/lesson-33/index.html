@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Веб-сховище — Студенти (localStorage + Handlebars)</title>
+    <title>Список студентів (localStorage)</title>
     <link rel="stylesheet" href="./styles.css" />
-    <!-- Handlebars з CDN (глобальний Handlebars) -->
+    <!-- Handlebars (глобально) -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 </head>
 
@@ -15,11 +15,9 @@
         <header class="header">
             <h1>Список студентів (localStorage)</h1>
             <p class="muted">При першому запуску дані беруться з <code>students.json</code>, далі — тільки з
-                <code>localStorage["students"]</code>.
-            </p>
+                <code>localStorage["students"]</code>.</p>
         </header>
 
-        <!-- Панель керування -->
         <section class="card">
             <div class="row">
                 <button id="add-btn" class="btn ok">Додати студента</button>
@@ -27,47 +25,51 @@
                 <span id="status" class="status"></span>
             </div>
 
-            <!-- Форма додавання/редагування (показується по кліку "Додати студента" або "Edit") -->
             <form id="student-form" class="form" hidden>
                 <h3 id="form-title">Нова картка студента</h3>
                 <div class="grid">
-                    <label>Ім'я
-                        <input id="firstName" class="input" type="text" required />
-                    </label>
-                    <label>Прізвище
-                        <input id="lastName" class="input" type="text" required />
-                    </label>
-                    <label>Вік
-                        <input id="age" class="input" type="number" min="14" max="100" required />
-                    </label>
-                    <label>Курс
-                        <input id="course" class="input" type="number" min="1" max="10" required />
-                    </label>
-                    <label>Факультет
-                        <input id="faculty" class="input" type="text" required />
-                    </label>
+                    <label>Ім'я<input id="firstName" class="input" type="text" required /></label>
+                    <label>Прізвище<input id="lastName" class="input" type="text" required /></label>
+                    <label>Вік<input id="age" class="input" type="number" min="14" max="100" required /></label>
+                    <label>Курс<input id="course" class="input" type="number" min="1" max="10" required /></label>
+                    <label>Факультет<input id="faculty" class="input" type="text" required /></label>
                 </div>
                 <div class="row">
                     <button type="submit" class="btn ok" id="save-btn">Зберегти</button>
                     <button type="button" class="btn" id="cancel-btn">Скасувати</button>
                 </div>
-                <!-- внутрішній стан: якщо є індекс — редагуємо, інакше додаємо -->
                 <input type="hidden" id="edit-index" value="" />
             </form>
         </section>
 
-        <!-- Інформативний рядок -->
         <p class="muted">Нижче список рендериться ТІЛЬКИ з <code>localStorage["students"]</code>.</p>
-
-        <!-- Список студентів -->
         <ul id="students-list" class="list"></ul>
     </main>
-    <footer>
-        <p>const info: CourseInfo = <br>{
-            розробник: "Павло Горганюк",<br>
-            курс: "Front-End 4"
-            };</p>
-    </footer>
+
+    <script id="tpl-students" type="text/x-handlebars-template">
+    {{#each students}}
+    <li class="student-card" data-index="{{@index}}">
+      <div class="student-header">
+        <div>
+          <div class="student-name">{{firstName}} {{lastName}}</div>
+          <div class="student-meta">
+            Вік: {{age}} · Курс: {{course}} · Факультет: {{faculty}}
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn edit">Edit</button>
+          <button class="btn danger delete">Delete</button>
+        </div>
+      </div>
+      <div class="confirm hidden">
+        <span>Видалити картку?</span>
+        <button class="btn yes">Так</button>
+        <button class="btn no">Ні</button>
+      </div>
+    </li>
+    {{/each}}
+    </script>
+
 
     <script src="./app.js" type="module" defer></script>
 </body>
